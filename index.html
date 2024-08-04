@@ -230,7 +230,9 @@
                 }
             }, 3000);
 
-            setTimeout(spawnBanana, Math.random() * 2000 + 1000);
+            if (Math.random() < 0.4) { // תוסף ההסתברות של 10%
+                setTimeout(spawnBanana, Math.random() * 2000 + 1000);
+            }
         }
 
         function catchMinion(minion) {
