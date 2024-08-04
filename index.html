@@ -244,7 +244,7 @@
 
         function catchBanana(banana) {
             score += 3;
-            timeLeft = Math.min(timeLeft + 5, 60);
+            timeLeft = Math.min(timeLeft + 2, 60);
             updateScorePanel();
             gameContainer.removeChild(banana);
             playSound('banana');
