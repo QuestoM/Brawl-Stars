@@ -6,9 +6,12 @@
     <title>Minion Brawl Deluxe</title>
     <style>
         :root {
-            --primary-color: #ffd700;
-            --secondary-color: #4169e1;
-            --background-color: #FFF;
+            --primary-color: #FFD966; /* Bright yellow */
+            --secondary-color: #FF6347; /* Vivid orange-red */
+            --tertiary-color: #2E8B57; /* Forest green */
+            --background-color: #87CEEB; /* Light sky blue */
+            --text-color: #FFFFFF; /* White for text */
+            --font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif; /* Playful font */
         }
 
         * {
@@ -18,7 +21,7 @@
         }
 
         html, body {
-            font-family: 'Arial', sans-serif;
+            font-family: var(--font-family);
             font-size: 16px;
             background-color: var(--background-color);
             height: 100%;
@@ -74,33 +77,42 @@
             position: absolute;
             top: 1rem;
             left: 1rem;
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 1rem;
-            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             z-index: 20;
         }
 
         .score, .time, .level {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: bold;
-            color: var(--secondary-color);
+            color: var(--text-color);
+            background-color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
             margin-bottom: 0.5rem;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
         }
 
         .start-button {
-            font-size: 1.5rem;
-            padding: 1rem 2rem;
+            font-size: 2rem;
+            padding: 0.5rem 1rem;
             background-color: var(--primary-color);
             border: none;
             border-radius: 0.5rem;
             cursor: pointer;
             transition: all 0.3s ease;
             z-index: 20;
+            color: var(--text-color);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
         }
 
         .start-button:hover {
             background-color: var(--secondary-color);
-            color: white;
+            color: var(--text-color);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
         }
 
         .game-over {
@@ -153,12 +165,12 @@
             .score-panel {
                 top: 0.5rem;
                 left: 0.5rem;
-                padding: 0.5rem;
+                gap: 0.3rem;
             }
 
-            .start-button {
-                font-size: 1.2rem;
-                padding: 0.8rem 1.6rem;
+            .score, .time, .level, .start-button {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.6rem;
             }
 
             .game-over h2 {
@@ -268,7 +280,7 @@
                 }
             }, 3000);
 
-            if (Math.random() < 0.4) { // תוסף ההסתברות של 10%
+            if (Math.random() < 0.6) { // תוסף ההסתברות
                 setTimeout(spawnBanana, Math.random() * 2000 + 1000);
             }
         }
